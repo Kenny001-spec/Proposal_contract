@@ -25,7 +25,6 @@ describe("ProposalVote Test", function () {
         });
     });
 
-    describe("deployment", () => {
         it("Should be able to create a proposal", async function () {
             const { proposalVote } = await loadFixture(deployProposalVoteFix);
 
@@ -35,7 +34,7 @@ describe("ProposalVote Test", function () {
 
             await expect(proposalVote.createProposal(name, description, quorum)).to.emit(proposalVote, "ProposalCreated").withArgs(name, quorum);
         });
-    });
+
 
     describe("voteOnProposal", () => {
         it("Should allow voting on a proposal", async function () {
